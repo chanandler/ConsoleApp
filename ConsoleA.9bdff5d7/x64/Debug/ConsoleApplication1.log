@@ -1,0 +1,5 @@
+﻿  ConsoleApplication1.cpp
+C:\Users\chana\OneDrive\Documents\Dev\ConsoleApplication1\ConsoleApplication1.cpp(8,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  ExampleClass.cpp
+  Generating Code...
+  ConsoleApplication1.vcxproj -> C:\Users\chana\OneDrive\Documents\Dev\ConsoleApplication1\x64\Debug\ConsoleApplication1.exe
