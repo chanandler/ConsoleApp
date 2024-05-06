@@ -2,17 +2,47 @@
 //
 #include <iostream>
 #include "ExampleClass.h"
+#include "Windows.h"
+void test(ExampleClass* Test3, char* arr);
+
 using namespace std;
 
-void main()
+int main()
 {
     ExampleClass* newclass = new ExampleClass();
+    
+    char* arr = new char[400];
+    memset(arr, 0, 400);
+    char* lst = &arr[0];
+    for (int i = 0; i < 100; i++)
+    {
 
-    newclass->PrintToConsole();
+        sprintf_s(lst, 4, "%i,", i);
+        char* nxt = strchr(lst, ',');
+        lst = nxt + 1;
+        //memcpy(&arr[i], tempbuf, 1);
+    }
 
-    cout << "Hello World!\n";
+    test(newclass, arr);
+    delete[] arr;
     delete newclass;
+
+    return 0;
 }
+
+void test(ExampleClass* Test3, char* arr)
+{
+    HANDLE ourConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+
+    for (int i = 0; i < 255; i++)
+    {
+        std::cout << arr[i];    
+        SetConsoleTextAttribute(ourConsole, i);
+
+        //Test3->PrintToConsole();
+    }
+}
+
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
